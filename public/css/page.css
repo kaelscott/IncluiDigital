@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text, .image {
+  flex: 2;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+p{
+  padding-top: 20px;
+}
+
+.image {
+  order: -1;
+}
+
+img{
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .box {
+    flex-direction: row;
+  }
+
+  .text, .image {
+    margin-bottom: 0;
+  }
+
+  .image {
+    margin-left: 20px;
+    order: 0; /* A imagem voltará à sua posição original */
+  }
+}
+
+
+

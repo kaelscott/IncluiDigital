@@ -1,0 +1,350 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    --accent-color: rgb(255, 104, 49);
+    --background-color: #edf0f1;
+    --text-color: #333;
+    --button-text-color: var(--background-color);
+    --transition-delay: 0;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition-delay);
+}
+
+body.dark{
+    --accent-color: rgb(73, 117, 248);
+    --background-color: #333;
+    --text-color: #edf0f1;
+}
+
+body.animation{
+    --transition-delay: .3s;
+}
+
+.links {
+    color: var(--text-color);
+}
+button{
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover{
+    outline: .125rem solid var(--text-color);
+    outline-offset: .125rem;
+}
+
+button:focus{
+    outline: .125rem solid var(--text-color);
+    outline-offset: .125rem;
+}
+
+.moon, .sun{
+    margin-left: 10px;
+}
+.moon{
+    fill: var(--background-color) !important;
+    display: block;
+}
+.dark .moon{
+    display: none;
+}
+.sun{
+    fill: var(--background-color) !important;
+    display: none;
+}
+.dark .sun{
+    display: block;
+}
+
+header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.nav-title{
+    cursor: pointer;
+    font-size: 64px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+header li, header a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-decoration: none !important;
+    padding: 10px;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0px 8px;
+}
+
+.nav-links li a:hover{
+    color: var(--accent-color);
+    outline: .125rem solid var(--accent-color);
+    text-decoration: underline!important;
+    outline-offset: .125rem;
+  }
+
+.nav-links li a:focus{
+    color: var(--accent-color);
+    outline: .125rem solid var(--accent-color);
+    text-decoration: underline!important;
+    outline-offset: .125rem;
+}
+
+.nav-links li a{
+    transition: all var(--transition-delay) ease 0s;
+    transition-property: color;
+}
+main{
+    padding: 10px 10%;
+}
+.main-container{
+    display: flex;
+    clear: both;
+}
+
+.main-image{
+    max-width: 100%; /* Faz a imagem ocupar 100% da largura da tela */
+    min-width: 400px;
+    width: 100%; /* Faz a imagem ocupar 100% da largura da tela */
+}
+
+.animation-toggle-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.theme-btn{
+    margin: 2rem;
+    max-width: fit-content;
+    padding: 2px 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.main-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    margin: 0 2rem;
+    max-width: 800px;
+}
+
+.main-text > p{
+    text-align: center;
+    font-size: 24px;
+}
+
+.main-text > a, .main-text button{
+    text-decoration: none;
+    align-self: center;
+    width: 400px;
+    min-height: 100px;
+    font-size: 24px;
+}
+
+.main-text a:focus{
+    outline: .125rem solid var(--text-color);
+    outline-offset: .125rem;
+    border-radius: 50px;
+}
+
+.articles {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 50px 250px;
+    text-align: justify;
+}
+
+.article {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 2px;
+}
+
+.article .ulr-btn button  {
+    margin: 20px auto 0 auto;
+    display: block;
+    width: 75%;
+    min-height: 25px;
+    font-size: 15px;
+}
+
+h3{
+    margin-bottom: 10px;
+}
+
+.article img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article:last-child{
+    margin-bottom: 50px;
+}
+
+img{
+    border-radius: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    width: 62px;
+    height: 35px;
+    display: inline-block;
+}
+
+/* The container for the switch and the text */
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* The text next to the switch */
+.animation-toggle-text {
+    display: inline-block;
+}
+
+.img-animation {
+    transition: transform 0.2s;
+}
+
+.img-animation:hover {
+    transform: scale(1.1);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: #fff;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.9em;
+    width: 1.9em;
+    border-radius: 16px;
+    left: 1.2px;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px #999999;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+    border: 1px solid transparent;
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+
+
+
+
+@media (max-width: 1150px) {
+    header{
+        flex-direction: column;
+    }
+
+    .nav-links li{
+        display: block;
+        text-align: center;
+        margin-top: 3rem;
+
+    }
+
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-image{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .main-text{
+        margin: 0;
+        align-items: center;
+    }
+
+    .main-text > a, .main-text button{
+        width: 300px;
+    }
+
+    .main-text{
+        margin-top: 2rem;
+        gap: 25px;
+    }
+
+    .switch-container{
+        display: none;
+    }
+
+    .article-scroll{
+        display: none;
+    }
+
+    .wcag{
+        outline: 1px solid var(--text-color);
+        padding: 9px 6px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .articles {
+        grid-template-columns: 1fr;
+        grid-gap: 20px 0px;
+    }
+}
